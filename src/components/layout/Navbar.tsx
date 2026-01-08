@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Menu } from "lucide-react"
+import { ChevronDown, Menu } from "lucide-react"
 
 import {
     NavigationMenu,
@@ -29,7 +29,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 export function Navbar() {
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-white backdrop-blur">
-            <div className="container mx-auto py-2 lg:py-4 px-4 lg:px-8 flex h-16 lg:h-20 items-center justify-between">
+            <div className="container mx-auto py-4 lg:py-6 px-4 lg:px-8 flex h-16 lg:h-20 items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="font-bold text-xl">
                     <Image
@@ -48,7 +48,7 @@ export function Navbar() {
 
                             {/* Menu Para Você */}
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>Para Você</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>Para Você <ChevronDown className="pl-2"/></NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <div className="grid grid-cols-3 gap-3 px-2 py-4 w-105">
                                         <NavList title="Seguros" items={pessoaFisicaSeguros} />
@@ -60,7 +60,7 @@ export function Navbar() {
 
                             {/* Menu Para Sua Empresa */}
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>Para Empresa</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>Para Empresa <ChevronDown className="pl-2"/></NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <div className="grid grid-cols-3 gap-3 px-2 py-4 w-105">
                                         <NavList title="Seguros" items={pessoaJuridicaSeguros} />
@@ -191,7 +191,7 @@ export function Navbar() {
 function NavList({ title, items }: { title: string; items: NavItem[] }) {
     return (
         <div>
-            <h5 className={`mb-1 text-sm p-2 font-bold leading-none text-primary uppercase tracking-wider ${canava.className}`}>
+            <h5 className={`mb-1 text-md p-2 font-bold leading-none text-primary uppercase tracking-wider ${canava.className}`}>
                 {title}
             </h5>
             <ul className="flex flex-col gap-1">

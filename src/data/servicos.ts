@@ -41,5 +41,28 @@ export const servicos: Servico[] = [
                 resposta: "O seguro cobre morte acidental, doenças graves e assistência funeral."
             }
         ]
+    },
+        {
+        slug: "seguro-auto",
+        titulo: "Seguro de Auto",
+        descricao: "Proteção completa para seu veículo em caso de acidentes.",
+        imagemUrl: "/images/hero-images/seguro-auto.jpg",
+        beneficios: [
+            "Proteção financeira para sua família",
+            "Cobertura para doenças graves",
+            "Assistência funeral"
+        ],
+        seguradoras: [
+            {
+                nome: "Seguradora A",
+                logoUrl: "/images/seguradoras/seguradora-a.png"
+            }
+        ],
+        duvidasFrequentes: [
+            {
+                pergunta: "O que é coberto pelo seguro?",
+                resposta: "O seguro cobre morte acidental, doenças graves e assistência funeral."
+            }
+        ]
     }
 ]
