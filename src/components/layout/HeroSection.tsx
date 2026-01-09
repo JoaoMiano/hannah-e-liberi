@@ -2,6 +2,7 @@ import { Button } from "../ui/button";
 import Link from "next/link"
 import { ChevronRight } from "lucide-react";
 import { abhayaLibre } from "@/fonts/fonts";
+import { getCompanyAge } from "@/helpers/yearsMarket";
 
 
 const HeroSection = () => {
@@ -24,7 +25,7 @@ const HeroSection = () => {
                         Segurança e Tranquilidade <br />para Você e Sua Família
                     </h1>
                     <p className="text-lg md:text-xl lg:text-2xl mb-8 text-zinc-300">
-                        Na Hannah & Libere, priorizamos o que é valioso para você. Com 7 anos de atuação, nossa corretora oferece uma consultoria completa em seguros e soluções financeiras, entregando o cuidado exato que cada momento da sua vida exige.
+                        Na Hannah & Libere, priorizamos o que é valioso para você. Com {getCompanyAge()} anos de atuação, nossa corretora oferece uma consultoria completa em seguros e soluções financeiras, entregando o cuidado exato que cada momento da sua vida exige.
                     </p>
                     {/* Botões de Ação */}
                     <div className="flex flex-col lg:flex-row gap-4 pb-14 lg:pb-20 border-b-zinc-500 border-b-2">
@@ -48,7 +49,7 @@ const HeroSection = () => {
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 pt-4 lg:pt-8">
                         <div className="">
-                            <span className={`text-4xl text-secondary ${abhayaLibre.className}`}>7+</span>
+                            <span className={`text-4xl text-secondary ${abhayaLibre.className}`}>{getCompanyAge()}+</span>
                             <p className="text-zinc-300 text-lg">Anos no Mercado</p>
                         </div>
                         <div className="">

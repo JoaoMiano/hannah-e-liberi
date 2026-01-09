@@ -1,6 +1,7 @@
 import Image from "next/image"
 import QualitiesItem from "../QualitiesItem"
 import { Award, Shield, UsersRound } from "lucide-react"
+import { getCompanyAge } from "@/helpers/yearsMarket"
 
 const AboutSection = () => {
     return (
@@ -41,7 +42,7 @@ const AboutSection = () => {
 
                         <p className="text-gray-600 mb-6 leading-relaxed">
                             A Hannah & Libere nasceu com um propósito claro: oferecer segurança e tranquilidade
-                            através de seguros e soluções financeiras personalizadas. Com 7 anos de trajetória
+                            através de seguros e soluções financeiras personalizadas. Com {getCompanyAge()} anos de trajetória
                             consolidada no mercado, nos tornamos referência em excelência e atendimento humanizado.
                         </p>
 
