@@ -1,12 +1,8 @@
-import { Abhaya_Libre } from "next/font/google";
 import { Button } from "../ui/button";
 import Link from "next/link"
 import { ChevronRight } from "lucide-react";
+import { abhayaLibre } from "@/fonts/fonts";
 
-const abhayaLibre = Abhaya_Libre({
-    subsets: ['latin'],
-    weight: ['400', '700'],
-})
 
 const HeroSection = () => {
     return (

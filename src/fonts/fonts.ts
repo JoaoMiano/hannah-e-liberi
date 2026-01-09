@@ -1,3 +1,4 @@
+import { Abhaya_Libre } from 'next/font/google'
 import localFont from 'next/font/local'
 
 export const canava = localFont({
@@ -22,4 +23,9 @@ export const Garacie = localFont({
   ],
   variable: '--font-garacie',
   display: 'swap',
+})
+
+export const abhayaLibre = Abhaya_Libre({
+    subsets: ['latin'],
+    weight: ['400', '700'],
 })

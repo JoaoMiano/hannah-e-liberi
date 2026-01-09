@@ -1,10 +1,6 @@
+import { abhayaLibre } from "@/fonts/fonts";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Abhaya_Libre } from "next/font/google";
-
-const abhayaLibre = Abhaya_Libre({
-    subsets: ['latin'],
-    weight: ['400', '700'],
-})
+import Link from "next/link";
 
 type Props = {
     title: string;
@@ -16,9 +12,8 @@ type Props = {
 
 const ServiceCard = ({ title, description, icon, type, url }: Props) => {
     return (
-        <a href={url} className="no-underline">
-            <div className="block group max-w-60 shadow-xl shadow-primary">
-                <Card className="transition-all duration-300 group-hover:border-secondary border-transparent border">
+        <Link href={url} className="block group outline-none">
+                <Card className="w-full transition-all duration-300 shadow-md shadow-zinc-500 group-hover:border-secondary border-transparent border">
                     <CardHeader>
                         <CardTitle className="flex flex-col items-start gap-2">
                             <div className="w-14 h-14 p-2 bg-chart-1 rounded-md text-primary flex items-center justify-center group-hover:bg-chart-2 group-hover:text-secondary transition-colors duration-300">
@@ -31,16 +26,15 @@ const ServiceCard = ({ title, description, icon, type, url }: Props) => {
 
                         </CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-4">
-                        <p className="text-gray-600">{description}</p>
+                    <CardContent className="space-y-6">
+                        <p className="text-gray-600 h-20">{description}</p>
 
                         <span className="inline-block font-medium text-sm text-primary transition-colors duration-300 group-hover:text-secondary">
                             Saiba mais →
                         </span>
                     </CardContent>
                 </Card>
-            </div>
-        </a>
+        </Link>
     )
 }
 

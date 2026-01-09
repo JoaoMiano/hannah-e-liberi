@@ -35,8 +35,10 @@ export const pessoaJuridicaSeguros: NavItem[] = [
 ];
 
 export const pessoaJuridicaPlanos: NavItem[] = [
-  { name: "Saúde Empresarial", href: "/pessoa-juridica/saude-pme" },
+  { name: "Saúde Empresarial", href: "/pessoa-juridica/saude-empresarial" },
   { name: "Odonto Coletivo", href: "/pessoa-juridica/odonto-pme" },
+  { name: "Vida Empresarial", href: "/pessoa-juridica/vida-empresarial" },
+
 ];
 
 export const pessoaJuridicaSolucoes: NavItem[] = [
