@@ -64,7 +64,7 @@ const Footer = () => {
                         <h3 className={`text-xl font-semibold mb-2 ${abhayaLibre.className}`}>Informações Legais</h3>
                         <ul className="flex flex-col gap-2 mb-4">
                             <li>
-                                <Link href="/politica-de-privacidade" className="text-sm hover:underline">
+                                <Link href="/politica-de-privacidade-e-cookies" className="text-sm hover:underline">
                                     Política de Privacidade
                                 </Link>
                             </li>
