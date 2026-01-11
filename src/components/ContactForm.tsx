@@ -8,6 +8,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { Send } from "lucide-react";
+import { Checkbox } from "./ui/checkbox";
 
 const ContactForm = () => {
     const form = useForm<NewContactType>({
@@ -18,6 +19,7 @@ const ContactForm = () => {
             email: "",
             phone: "",
             message: "",
+            acceptedTerms: false,
         }
     })
 
@@ -84,7 +86,7 @@ const ContactForm = () => {
                         <FormItem className="flex-1">
                             <FormLabel>Telefone *</FormLabel>
                             <FormControl>
-                                <Input placeholder="Digite seu telefone." {...field} />
+                                <Input placeholder="Digite seu telefone." type="number" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -105,13 +107,39 @@ const ContactForm = () => {
                     )}
                 />
 
+                <FormField
+                    name="acceptedTerms"
+                    control={form.control}
+                    render={({ field }) => (
+                        <FormItem className="flex flex-col gap-2">
+                            <FormControl>
+                                <div className="flex items-center gap-2">
+                                    <Checkbox
+                                        checked={field.value}
+                                        onCheckedChange={field.onChange}
+                                        className=" border-zinc-700"
+                                    />
+                                    <span className="text-sm text-zinc-700">
+                                        Li e concordo com os
+                                        <a href="/termos-de-uso" className="font-semibold hover:underline"> Termos de Uso </a>
+                                         e com a <a href="/politica-de-privacidade-e-cookies" className="font-semibold hover:underline">Política de Privacidade</a>.
+                                    </span>
+                                </div>
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
+
                 {/* Submit Button */}
                 <div>
                     <Button
+                        disabled={!form.watch("acceptedTerms")}
                         type="submit"
                         className="w-full px-4 py-2 bg-secondary text-white rounded hover:bg-secondary/80 cursor-pointer transition-colors duration-300 "
                     >
-                       <Send /> Enviar Mensagem
+                        <Send /> Enviar Mensagem
                     </Button>
                 </div>
             </form>

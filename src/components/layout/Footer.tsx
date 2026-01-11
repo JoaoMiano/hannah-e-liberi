@@ -7,7 +7,7 @@ import Link from "next/link";
 const Footer = () => {
     return (
         <footer className="w-full bg-primary text-zinc-200 py-4 flex flex-col items-center justify-center">
-            <div className="container mx-auto py-4 lg:py-6 px-4 lg:px-8  ">
+            <div className="container mx-auto px-4 lg:px-8  ">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 border-b border-zinc-400">
                     <div className="flex flex-col gap-4 lg:gap-8 items-center justify-center">
                         <Link href="/">
@@ -29,7 +29,7 @@ const Footer = () => {
 
                     <div className="flex flex-col gap-4 items-center justify-center mt-4">
                         <h3 className={`text-xl font-semibold mb-2 ${abhayaLibre.className}`}>Siga-nos</h3>
-                        <ul className="flex flex-col gap-2 mb-4">
+                        <ul className="flex flex-col gap-2 mb-4 flex-1">
                             <li>
                                 <a href={process.env.NEXT_PUBLIC_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-sm hover:underline flex items-center gap-2">
                                     <div className="bg-white/10 rounded-full p-2 w-10 h-10 flex items-center justify-center">
@@ -62,7 +62,7 @@ const Footer = () => {
                     {/* Informaçes legais */}
                     <div className="flex flex-col gap-4 items-center justify-center mt-4">
                         <h3 className={`text-xl font-semibold mb-2 ${abhayaLibre.className}`}>Informações Legais</h3>
-                        <ul className="flex flex-col gap-2 mb-4">
+                        <ul className="flex flex-col gap-2 mb-4 flex-1">
                             <li>
                                 <Link href="/politica-de-privacidade-e-cookies" className="text-sm hover:underline">
                                     Política de Privacidade

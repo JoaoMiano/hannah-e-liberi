@@ -1,11 +1,17 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const NewContactSchema = z.object({
-  name: z.string().min(3, "Nome deve ter pelo menos 3 caracteres").max(20, "Nome deve ter no máximo 20 caracteres"),
-  surname: z.string().min(3, "Sobrenome deve ter pelo menos 3 caracteres").max(30, "Sobrenome deve ter no máximo 30 caracteres"),
+  name: z.string().min(1, "Nome é obrigatório"),
+  surname: z.string().min(1, "Sobrenome é obrigatório"),
   email: z.string().email("Email inválido"),
-  phone: z.string().min(11, "Telefone deve ter pelo menos 11 caracteres").max(11, "Telefone deve ter no máximo 11 caracteres"),
-  message: z.string().min(10, "Mensagem deve ter pelo menos 10 caracteres").max(500, "Mensagem deve ter no máximo 500 caracteres").optional(),
+  phone: z.string().min(8, "Telefone inválido"),
+  message: z.string().optional(),
+
+  acceptedTerms: z
+    .boolean()
+    .refine(val => val === true, {
+      message: "Você precisa aceitar os termos de uso",
+    }),
 });
 
-export type NewContactType = z.infer<typeof NewContactSchema>;  
+export type NewContactType = z.infer<typeof NewContactSchema>;

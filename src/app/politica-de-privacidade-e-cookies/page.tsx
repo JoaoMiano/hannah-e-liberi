@@ -4,13 +4,13 @@ import Image from "next/image"
 const PoliticaDePrivacidade = () => {
     return (
         <section className="container mx-auto max-w-4xl py-4 lg:py-6 px-4 lg:px-8">
-            <header className="mb-6">
+            <header className="mb-6 flex justify-center">
                 <Image
+                    width={690}
+                    height={390}
                     src="/images/logoPrimaria.jpg"
                     alt="Logo Hannah & Liberi"
-                    width={250}
-                    height={250}
-                    className="mx-auto mb-4"
+                    className="max-w-60 max-h-30 lg:max-h-50 lg:max-w-100"
                 />
             </header>
 
