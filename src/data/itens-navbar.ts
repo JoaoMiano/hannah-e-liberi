@@ -5,12 +5,11 @@ export type NavItem = {
 
 //Pessoa fisica
 export const pessoaFisicaSeguros: NavItem[] = [
-  { name: "Automóvel", href: "/pessoa-fisica/seguro-auto" },
-  { name: "Residencial", href: "/pessoa-fisica/seguro-residencial" },
-  { name: "Vida", href: "/pessoa-fisica/seguro-vida" },
-  { name: "Bike", href: "/pessoa-fisica/seguro-bike" },
-  { name: "Celular", href: "/pessoa-fisica/seguro-celular" },
-  { name: "Viagem", href: "/pessoa-fisica/seguro-viagem" },
+  { name: "Automóvel", href: "seguros/pessoa-fisica/seguro-auto" },
+  { name: "Residencial", href: "seguros/pessoa-fisica/seguro-residencial" },
+  { name: "Vida", href: "seguros/pessoa-fisica/seguro-vida" },
+  { name: "Ramos Elementares", href: "seguros/pessoa-fisica/ramos-elementares" },
+  { name: "Viagem", href: "seguros/pessoa-fisica/seguro-viagem" },
 ];
 
 export const pessoaFisicaPlanos: NavItem[] = [

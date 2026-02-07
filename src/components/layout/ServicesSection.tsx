@@ -25,7 +25,7 @@ const ServicesSection = () => {
                     description="Proteção completa para seu veículo com coberturas personalizadas e assistência 24h."
                     icon={<Car />}
                     type="fisica"
-                    url="/pessoa-fisica/seguro-auto"
+                    url="seguros/pessoa-fisica/seguro-auto"
                 />
 
                 <ServiceCard
@@ -33,7 +33,7 @@ const ServicesSection = () => {
                     description="Proteja o futuro de quem você ama com nossos seguros de vida personalizados."
                     icon={<Heart />}
                     type="fisica"
-                    url="/pessoa-fisica/seguro-vida"
+                    url="seguros/pessoa-fisica/seguro-vida"
                 />
 
                 <ServiceCard
@@ -41,7 +41,7 @@ const ServicesSection = () => {
                     description="Proteja seu lar e seus bens contra imprevistos com tranquilidade total."
                     icon={<Home />}
                     type="fisica"
-                    url="/pessoa-fisica/seguro-residencial"
+                    url="seguros/pessoa-fisica/seguro-residencial"
                 />
 
                 <ServiceCard
