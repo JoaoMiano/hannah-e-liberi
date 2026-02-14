@@ -1,6 +1,6 @@
 import { abhayaLibre } from "@/fonts/fonts"
-import PartnerLogo from "../ParternLogo"
 import { seguradoras } from "@/data/seguradoras"
+import { CardCompanyLogo } from "../CardCompanyLogo"
 
 
 const PaternsSection = () => {
@@ -19,12 +19,11 @@ const PaternsSection = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-4 lg:grid-cols-8 gap-4 ">
+                <div className="grid grid-cols-3 lg:grid-cols-6 gap-4 ">
                     {seguradoras.map((seguradora, index) => (
-                        <PartnerLogo 
+                        <CardCompanyLogo
                             key={index}
-                            src={seguradora.src}
-                            alt={seguradora.alt}
+                            company={seguradora}
                         />
                     ))}
                 </div>

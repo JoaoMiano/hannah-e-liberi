@@ -1,7 +1,5 @@
-export type seguradora = {
-    nome: string;
-    logoUrl: string;
-}
+import { company } from "./seguradoras";
+
 
 export type duvida = {
     pergunta: string;
@@ -20,7 +18,7 @@ export type Servico = {
     descricao: string;
     imagemUrl: string;
     coberturas: Cobertura[];
-    seguradoras: seguradora[];
+    seguradoras: company[];
     duvidasFrequentes: duvida[];
 }
 
@@ -54,10 +52,7 @@ export const servicos: Servico[] = [
             }
         ],
         seguradoras: [
-            {
-                nome: "Seguradora A",
-                logoUrl: "/images/seguradoras/seguradora-a.png"
-            }
+
         ],
         duvidasFrequentes: [
             {
@@ -99,15 +94,40 @@ export const servicos: Servico[] = [
             }
         ],
         seguradoras: [
-            {
-                nome: "Seguradora A",
-                logoUrl: "/images/seguradoras/seguradora-a.png"
-            }
+            { alt: "Akad", src: "/images/seguradoras/akad.PNG" },
+            { alt: "Aliro", src: "/images/seguradoras/aliro.png" },
+            { alt: "Allianz", src: "/images/seguradoras/allianz.svg" },
+            { alt: "Azul", src: "/images/seguradoras/azul.png" },
+            { alt: "Bradesco", src: "/images/seguradoras/bradesco.svg" },
+            { alt: "HDI", src: "/images/seguradoras/hdi.webp" },
+            { alt: "Itaú", src: "/images/seguradoras/itau.jpg" },
+            { alt: "Porto Seguro", src: "/images/seguradoras/porto.svg" },
+            { alt: "Suhai", src: "/images/seguradoras/suhai.webp" },
+            { alt: "Sura", src: "/images/seguradoras/sura.png" },
+            { alt: "Tokio Marine", src: "/images/seguradoras/tokio.svg" },
+            { alt: "Yelum", src: "/images/seguradoras/yelum.webp" },
+            { alt: "Zurich", src: "/images/seguradoras/zurich.webp" }
         ],
         duvidasFrequentes: [
             {
-                pergunta: "O que é coberto pelo seguro?",
-                resposta: "O seguro cobre morte acidental, doenças graves e assistência funeral."
+                pergunta: "O que é a franquia e quando eu preciso pagá-la?",
+                resposta: "A franquia é a participação obrigatória do segurado em caso de danos parciais no veículo (consertos). Você paga o valor fixado na apólice diretamente à oficina, e a seguradora cobre o restante. Em casos de perda total, roubo/furto ou danos a terceiros, você não paga franquia."
+            },
+            {
+                pergunta: "O seguro cobre qualquer pessoa que estiver dirigindo meu carro?",
+                resposta: "Depende da sua apólice. Geralmente, condutores eventuais estão cobertos, mas pessoas que dirigem o veículo regularmente (ex: filhos ou cônjuges) devem ser listadas como condutores adicionais para garantir que a cobertura seja válida em caso de sinistro."
+            },
+            {
+                pergunta: "Qual a diferença entre cobertura de Terceiros e cobertura Completa?",
+                resposta: "A cobertura de Terceiros (RCF-V) indeniza apenas danos materiais ou corporais que você causar a outros veículos ou pessoas. Já a cobertura Completa (Compreensiva) protege o seu próprio veículo contra colisão, incêndio, roubo e furto, além de incluir a cobertura para terceiros."
+            },
+            {
+                pergunta: "Como funciona a Classe de Bônus na renovação?",
+                resposta: "A Classe de Bônus é um sistema de pontuação: a cada ano que você renova o seguro sem registrar nenhum sinistro, você ganha um nível (ponto). Quanto maior sua classe de bônus, maior o desconto que você recebe no valor do seguro, e esse bônus pertence ao CPF do segurado, não ao carro."
+            },
+            {
+                pergunta: "Tenho direito a carro reserva por quanto tempo?",
+                resposta: "O período de carro reserva varia conforme a cláusula contratada, sendo os prazos mais comuns de 7, 15 ou 30 dias. Ele pode ser acionado em situações de sinistro coberto, como colisões que exijam reparo ou em casos de roubo e furto enquanto o processo de indenização ocorre."
             }
         ]
     }

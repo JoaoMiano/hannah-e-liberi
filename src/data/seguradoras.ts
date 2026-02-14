@@ -1,4 +1,9 @@
-export const seguradoras = [
+export type company = {
+  alt: string,
+  src:string
+}
+
+export const seguradoras: company[] = [
   { alt: "Akad", src: "/images/seguradoras/akad.PNG" },
   { alt: "Aliro", src: "/images/seguradoras/aliro.png" },
   { alt: "Allianz", src: "/images/seguradoras/allianz.svg" },
