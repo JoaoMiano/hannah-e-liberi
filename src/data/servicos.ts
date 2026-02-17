@@ -23,6 +23,7 @@ export type Servico = {
 }
 
 export const servicos: Servico[] = [
+    //vida - pessoa fisica
     {
         slug: "seguro-vida",
         titulo: "Seguro Vida",
@@ -52,15 +53,45 @@ export const servicos: Servico[] = [
             }
         ],
         seguradoras: [
-
+            { alt: "Akad", src: "/images/seguradoras/akad.PNG" },
+            { alt: "Allianz", src: "/images/seguradoras/allianz.svg" },
+            { alt: "HDI", src: "/images/seguradoras/hdi.webp" },
+            { alt: "Itaú", src: "/images/seguradoras/itau.jpg" },
+            { alt: "Mapfre", src: "/images/seguradoras/mapfre.png" },
+            { alt: "Metlife", src: "/images/seguradoras/metlife.jpg" },
+            { alt: "Porto Seguro", src: "/images/seguradoras/porto.svg" },
+            { alt: "Pottencial", src: "/images/seguradoras/pottencial.png" },
+            { alt: "SulAmérica", src: "/images/seguradoras/sulamerica.webp" },
+            { alt: "Sura", src: "/images/seguradoras/sura.png" },
+            { alt: "Tokio Marine", src: "/images/seguradoras/tokio.svg" },
+            { alt: "Unimed Seguros", src: "/images/seguradoras/unimed.png" },
+            { alt: "Yelum", src: "/images/seguradoras/yelum.webp" },
+            { alt: "Zurich", src: "/images/seguradoras/zurich.webp" },
         ],
         duvidasFrequentes: [
             {
-                pergunta: "O que é coberto pelo seguro?",
-                resposta: "O seguro cobre morte acidental, doenças graves e assistência funeral."
+                pergunta: "O seguro de vida serve apenas para casos de morte?",
+                resposta: "Não. O seguro de vida moderno oferece coberturas para serem usadas em vida, como indenização por invalidez (total ou parcial), diagnóstico de doenças graves (como câncer ou infarto) e até diárias de internação hospitalar."
+            },
+            {
+                pergunta: "Quem recebe a indenização precisa pagar imposto ou passar por inventário?",
+                resposta: "Não. De acordo com a legislação brasileira, o seguro de vida não é considerado herança. Por isso, o valor é pago diretamente aos beneficiários, livre de impostos e sem precisar passar pelo processo burocrático de inventário."
+            },
+            {
+                pergunta: "Posso escolher qualquer pessoa como beneficiário?",
+                resposta: "Sim. Você tem total liberdade para escolher quem receberá a indenização (familiares, amigos ou parceiros) e pode alterar essa indicação a qualquer momento na sua apólice."
+            },
+            {
+                pergunta: "Existe carência para começar a usar o seguro?",
+                resposta: "Para acidentes pessoais, a cobertura costuma ser imediata após a aceitação da proposta. Para morte natural ou doenças, algumas seguradoras podem aplicar carências que variam de 60 a 90 dias, dependendo do contrato."
+            },
+            {
+                pergunta: "O que acontece se eu quiser cancelar o seguro?",
+                resposta: "O cancelamento pode ser feito a qualquer momento sem multas. No entanto, nos seguros tradicionais, o valor pago não é devolvido. A exceção são os seguros de 'Vida Resgatável', que permitem retirar uma parte do montante após um período determinado."
             }
         ]
     },
+    //auto - pessoa fisica
     {
         slug: "seguro-auto",
         titulo: "Seguro Auto",
@@ -130,5 +161,80 @@ export const servicos: Servico[] = [
                 resposta: "O período de carro reserva varia conforme a cláusula contratada, sendo os prazos mais comuns de 7, 15 ou 30 dias. Ele pode ser acionado em situações de sinistro coberto, como colisões que exijam reparo ou em casos de roubo e furto enquanto o processo de indenização ocorre."
             }
         ]
+    },
+    //residencial - pessoa fisica
+    {
+        slug: "seguro-residencial",
+        titulo: "Seguro Residencial",
+        type: "fisica",
+        descricao: "Proteja seu patrimônio e sua família com coberturas completas que vão desde danos elétricos até serviços de assistência 24h. Mais do que um seguro, a tranquilidade que o seu lar merece.",
+        imagemUrl: "/images/hero-images/seguro-residencial.jpg",
+        coberturas: [
+            {
+                titulo: "Incêndio, Raio e Explosão",
+                descricao: "A cobertura básica que protege a estrutura do imóvel e tudo o que está dentro dele contra fogo, descargas elétricas atmosféricas e explosões de qualquer natureza."
+            },
+            {
+                titulo: "Danos Elétricos",
+                descricao: "Garante a reposição de eletrodomésticos, eletrônicos e instalações que venham a queimar devido a curto-circuitos ou variações de tensão na rede elétrica."
+            },
+            {
+                titulo: "Roubo e Furto Qualificado",
+                descricao: "Protege seus bens (móveis, roupas, eletrônicos) em caso de assalto ou invasão do imóvel que deixe vestígios de arrombamento."
+            },
+            {
+                titulo: "Responsabilidade Civil Familiar",
+                descricao: "Cobre danos causados involuntariamente a terceiros, como um vazamento no seu apartamento que estraga o teto do vizinho ou um objeto que cai da sua janela."
+            },
+            {
+                titulo: "Vendaval e Granizo",
+                descricao: "Indenização por danos causados por ventos fortes ou chuvas de granizo que venham a danificar telhados, janelas e o conteúdo da residência."
+            },
+            {
+                titulo: "Quebra de Vidros",
+                descricao: "Cobre a substituição de vidros de janelas, portas, espelhos e até tampos de mesa que se quebrem acidentalmente."
+            },
+            {
+                titulo: "Perda ou Pagamento de Aluguel",
+                descricao: "Caso o imóvel fique inabitável após um sinistro, o seguro paga as despesas de aluguel em outro local ou compensa o valor que você deixaria de receber se o imóvel estivesse alugado."
+            }
+        ],
+        seguradoras: [
+            { alt: "Allianz", src: "/images/seguradoras/allianz.svg" },
+            { alt: "Azul", src: "/images/seguradoras/azul.png" },
+            { alt: "HDI", src: "/images/seguradoras/hdi.webp" },
+            { alt: "Itaú", src: "/images/seguradoras/itau.jpg" },
+            { alt: "Mapfre", src: "/images/seguradoras/mapfre.png" },
+            { alt: "Porto Seguro", src: "/images/seguradoras/porto.svg" },
+            { alt: "Pottencial", src: "/images/seguradoras/pottencial.png" },
+            { alt: "Sura", src: "/images/seguradoras/sura.png" },
+            { alt: "Tokio Marine", src: "/images/seguradoras/tokio.svg" },
+            { alt: "Unimed Seguros", src: "/images/seguradoras/unimed.png" },
+            { alt: "Yelum", src: "/images/seguradoras/yelum.webp" },
+            { alt: "Zurich", src: "/images/seguradoras/zurich.webp" }
+        ],
+        duvidasFrequentes: [
+            {
+                pergunta: "O que está coberto na garantia básica do seguro residencial?",
+                resposta: "A cobertura básica obrigatória cobre danos causados por incêndio, queda de raio (dentro do terreno) e explosão de qualquer natureza. Outras proteções, como roubo ou danos elétricos, são contratadas como coberturas adicionais."
+            },
+            {
+                pergunta: "As assistências 24h (chaveiro, encanador, eletricista) têm custo extra?",
+                resposta: "Geralmente não. A maioria dos planos já inclui um pacote de assistência dia e noite. Você paga apenas pelas peças trocadas, se necessário, mas a mão de obra do profissional costuma ser gratuita dentro do limite da apólice."
+            },
+            {
+                pergunta: "Danos causados por curto-circuito em eletrodomésticos estão cobertos?",
+                resposta: "Sim, desde que você contrate a cobertura adicional de 'Danos Elétricos'. Ela protege contra oscilações de energia e curtos que queimem computadores, geladeiras e outros aparelhos."
+            },
+            {
+                pergunta: "O seguro cobre qualquer tipo de vazamento?",
+                resposta: "Depende. O seguro residencial cobre danos causados por vazamentos acidentais e súbitos (rompimento de tubulação). Problemas crônicos por falta de manutenção ou infiltrações lentas geralmente não têm cobertura."
+            },
+            {
+                pergunta: "Se eu moro em apartamento, ainda preciso de seguro residencial?",
+                resposta: "Sim. O seguro do condomínio cobre apenas as áreas comuns e a estrutura global do prédio. O seu seguro individual protege o conteúdo do seu imóvel (móveis, eletrônicos) e danos que você possa causar a vizinhos, como um vazamento no seu banheiro."
+            }
+        ]
+
     }
 ]
