@@ -6,7 +6,7 @@ const ServicesSection = () => {
     return (
         <section className="container mx-auto px-4 lg:px-6 py-12 md:py-18 lg:py-20">
             <div className="flex flex-col items-center text-center mb-18">
-                <div className="inline-block bg-chart-2 text-lg text-secondary px-4 py-2 rounded-full mb-4">
+                <div className="inline-block bg-secondary/30 text-lg text-primary px-4 py-2 rounded-full mb-4">
                     Nossas Soluções
                 </div>
                 <h2 className={`text-primary text-3xl md:text-4xl lg:text-5xl font-bold mb-6 max-w-3xl ${abhayaLibre.className}`}>
@@ -91,7 +91,7 @@ const ServicesSection = () => {
             <div className="flex flex-col items-center justify-center mt-10">
 
                 <p className="text-zinc-600 text-md lg:text-xl">Não encontrou o que procura? Entre em contato conosco.</p>
-                <p className="px-8 py-2 text-md lg:text-xl text-secondary rounded-md flex gap-2 hover:text-secondary/70 transition-colors duration-300 cursor-pointer">
+                <p className="px-8 py-2 text-md lg:text-xl text-primary-foreground rounded-md flex gap-2 hover:text-primary-foreground/70 transition-colors duration-300 cursor-pointer">
                     <a href="#contato" >
                         Fale com um Especialista!
                     </a>

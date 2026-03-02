@@ -137,7 +137,7 @@ const ContactForm = () => {
                     <Button
                         disabled={!form.watch("acceptedTerms")}
                         type="submit"
-                        className="w-full px-4 py-2 bg-secondary text-white rounded hover:bg-secondary/80 cursor-pointer transition-colors duration-300 "
+                        className="w-full px-4 py-2 bg-primary-foreground text-white rounded hover:bg-primary-foreground/80 cursor-pointer transition-colors duration-300 "
                     >
                         <Send /> Enviar Mensagem
                     </Button>

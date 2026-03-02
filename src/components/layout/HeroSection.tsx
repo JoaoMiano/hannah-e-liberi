@@ -15,7 +15,7 @@ const HeroSection = () => {
                     alt="Segurança e Proteção"
                     className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-r from-primary to-primary/65"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-primary/80 to-primary/55"></div>
             </div>
 
             {/* Content */}
@@ -33,7 +33,7 @@ const HeroSection = () => {
                             href="/contato"
                             className="w-52 lg:w-60 cursor-pointer"
                         >
-                            <Button className="w-full bg-secondary hover:bg-secondary/90 text-white text-lg cursor-pointer flex items-center justify-center gap-2 hover:gap-4">
+                            <Button  className="w-full bg-transparent border border-secondary text-white text-lg cursor-pointer flex items-center justify-center gap-2 hover:gap-4">
                                 Solicitar cotação <ChevronRight className="text-xl" />
                             </Button>
                         </Link>

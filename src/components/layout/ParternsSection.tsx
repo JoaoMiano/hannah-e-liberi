@@ -8,7 +8,7 @@ const PaternsSection = () => {
         <section>
             <div className="container mx-auto px-4 lg:px-6 py-12 md:py-18 lg:py-20">
                 <div className="flex flex-col items-center text-center mb-18">
-                    <div className="inline-block bg-chart-2 text-lg text-secondary px-4 py-2 rounded-full mb-4">
+                    <div className="inline-block bg-secondary/30 text-lg text-primary px-4 py-2 rounded-full mb-4">
                         Seguradoras
                     </div>
                     <h2 className={`text-primary text-3xl md:text-4xl lg:text-5xl font-bold mb-6 max-w-3xl ${abhayaLibre.className}`}>

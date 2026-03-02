@@ -17,7 +17,7 @@ const ServiceCard = ({ title, description, icon, type, url }: Props) => {
 
                 <CardHeader className="flex-none">
                     <CardTitle className="flex flex-col items-start gap-2">
-                        <div className="w-14 h-14 p-2 bg-chart-1 rounded-md text-primary flex items-center justify-center group-hover:bg-chart-2 group-hover:text-secondary transition-colors duration-300">
+                        <div className="w-14 h-14 p-2 bg-chart-1 rounded-md text-primary flex items-center justify-center group-hover:bg-primary-foreground/30  transition-colors duration-300">
                             {icon}
                         </div>
 

@@ -10,7 +10,7 @@ export const ContactSection = () => {
         <section id="contact" className=" border-t border-zinc-300">
             <div className="container mx-auto px-4 lg:px-6 py-12 md:py-18 lg:py-20">
                 <div className="flex flex-col gap-4 items-center">
-                    <div className="inline-block bg-chart-2 text-lg text-secondary px-4 py-2 rounded-full mb-4">
+                    <div className="inline-block bg-secondary/30 text-lg text-primary px-4 py-2 rounded-full mb-4">
                         Entre em Contato
                     </div>
 

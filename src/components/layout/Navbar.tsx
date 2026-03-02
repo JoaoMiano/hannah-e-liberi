@@ -85,7 +85,7 @@ export function Navbar() {
                                 <NavigationMenuLink asChild>
                                     <Link
                                         href="/contato"
-                                        className="block select-none space-y-1 rounded-md py-2 px-8 leading-none no-underline outline-none transition-colors bg-secondary text-white text-sm hover:text-white hover:bg-secondary-foreground"
+                                        className="block select-none space-y-1 rounded-md py-2 px-8 leading-none no-underline outline-none transition-colors bg-primary-foreground text-white text-sm hover:text-white hover:bg-primary-foreground/90 focus:bg-primary/85"
                                     >
                                         Contato
                                     </Link>
