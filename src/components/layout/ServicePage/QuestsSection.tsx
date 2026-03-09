@@ -1,9 +1,9 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Servico } from "@/data/servicos";
 import { abhayaLibre } from "@/fonts/fonts";
+import { Quest } from "@/types/services";
 import { MessageCircleQuestionMark } from "lucide-react";
 
-export const QuestsSection = ({ service }: { service: Servico }) => {
+export const QuestsSection = ({ quests }: { quests: Quest[] }) => {
     return (
         <section className="container mx-auto px-4 lg:px-6 py-12 md:py-24">
             <div className="max-w-6xl mx-auto flex flex-col gap-10">
@@ -23,7 +23,7 @@ export const QuestsSection = ({ service }: { service: Servico }) => {
                     defaultValue="item-0" 
                     className="w-full space-y-2"
                 >
-                    {service.duvidasFrequentes.map((quest, index) => (
+                    {quests.map((quest, index) => (
                         <AccordionItem 
                             key={index} 
                             value={`item-${index}`}

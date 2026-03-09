@@ -9,12 +9,20 @@ import TestimonialSection from "@/components/layout/TestimonialSection"
 const Page = () => {
   return (
     <main>
-      <HeroSection />
-      <AboutSection />
+      <HeroSection /> 
+
+      <div id="sobre">
+        <AboutSection />
+      </div>
+
       <ServicesSection />
       <TestimonialSection />
       <PaternsSection />
-      <ContactSection />
+      
+      <div id="contato">
+        <ContactSection />
+      </div>
+      
     </main>
   )
 }

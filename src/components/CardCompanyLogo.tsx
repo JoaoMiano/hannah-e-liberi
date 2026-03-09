@@ -1,9 +1,9 @@
-import { company } from "@/data/seguradoras";
+import type { Company } from "@/types/services";
 import Image from "next/image";
 
 // Dica: Use letras maiúsculas para Types/Interfaces
 type CardCompanyLogoProps = {
-    company: company;
+    company: Company;
 }
 
 export const CardCompanyLogo = ({ company }: CardCompanyLogoProps) => {

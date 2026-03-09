@@ -1,240 +1,155 @@
-import { company } from "./seguradoras";
+import { Cobertura, Company, Quest } from "@/types/services";
 
 
-export type duvida = {
-    pergunta: string;
-    resposta: string;
-}
 
-type Cobertura = {
-    titulo: string;
-    descricao?: string;
-}
+
 
 export type Servico = {
     slug: string;
     type: 'fisica' | 'juridica';
     titulo: string;
     descricao: string;
-    imagemUrl: string;
+    imageUrl: string;
     coberturas: Cobertura[];
-    seguradoras: company[];
-    duvidasFrequentes: duvida[];
+    seguradoras: Company[];
+    duvidasFrequentes: Quest[];
 }
 
 export const servicos: Servico[] = [
-    //vida - pessoa fisica
+    // consórcio (pessoa física + jurídica)
     {
-        slug: "seguro-vida",
-        titulo: "Seguro Vida",
+        slug: "consorcio",
+        titulo: "Consórcio",
         type: "fisica",
-        descricao: "Proteja sua família com nosso seguro de vida personalizado.",
-        imagemUrl: "/images/hero-images/seguro-vida.jpg",
+        descricao: "Planeje grandes aquisições com parcelas que cabem no seu bolso. O consórcio é uma forma organizada e econômica de comprar imóveis, veículos ou serviços sem juros.",
+        imageUrl: "/images/hero-images/hero-bg.jpg",
         coberturas: [
             {
-                titulo: "Morte (Qualquer Causa)",
-                descricao: "Garante o pagamento de uma indenização aos beneficiários em caso de falecimento do segurado, proporcionando suporte financeiro imediato."
+                titulo: "Carta de Crédito Personalizada",
+                descricao: "Escolha o valor do crédito que melhor se adapta ao seu objetivo e faça uso do montante ao ser contemplado."
             },
             {
-                titulo: "Invalidez por Acidente (IPA)",
-                descricao: "Pagamento de indenização total ou parcial caso o segurado sofra um acidente que cause a perda definitiva de funções de membros ou órgãos."
+                titulo: "Administradora Regulamentada",
+                descricao: "Trabalhamos com administradoras autorizadas pelo Banco Central, garantindo transparência e segurança durante todo o plano."
             },
             {
-                titulo: "Doenças Graves",
-                descricao: "Recebimento de capital em vida ao ser diagnosticado com doenças críticas (como câncer ou infarto), auxiliando nos custos do tratamento e recuperação."
+                titulo: "Lances e Sorteios",
+                descricao: "Acelere sua contemplação com lances ou aguarde ser sorteado; você decide o melhor caminho para conquistar seu bem."
             },
             {
-                titulo: "Assistência Funeral",
-                descricao: "Cobertura das despesas ou prestação de serviços organizacionais para o sepultamento ou cremação, aliviando a família de burocracias e custos."
-            },
-            {
-                titulo: "Incapacidade Temporária (DIT)",
-                descricao: "Ideal para profissionais autônomos: garante o pagamento de diárias caso você precise se afastar do trabalho por ordens médicas devido a doença ou acidente."
+                titulo: "Flexibilidade de Prazos",
+                descricao: "Planos com prazos variados que se adaptam ao seu orçamento e ao seu planejamento financeiro."
             }
         ],
         seguradoras: [
-            { alt: "Akad", src: "/images/seguradoras/akad.PNG" },
-            { alt: "Allianz", src: "/images/seguradoras/allianz.svg" },
-            { alt: "HDI", src: "/images/seguradoras/hdi.webp" },
-            { alt: "Itaú", src: "/images/seguradoras/itau.jpg" },
-            { alt: "Mapfre", src: "/images/seguradoras/mapfre.png" },
-            { alt: "Metlife", src: "/images/seguradoras/metlife.jpg" },
             { alt: "Porto Seguro", src: "/images/seguradoras/porto.svg" },
-            { alt: "Pottencial", src: "/images/seguradoras/pottencial.png" },
-            { alt: "SulAmérica", src: "/images/seguradoras/sulamerica.webp" },
-            { alt: "Sura", src: "/images/seguradoras/sura.png" },
-            { alt: "Tokio Marine", src: "/images/seguradoras/tokio.svg" },
-            { alt: "Unimed Seguros", src: "/images/seguradoras/unimed.png" },
-            { alt: "Yelum", src: "/images/seguradoras/yelum.webp" },
-            { alt: "Zurich", src: "/images/seguradoras/zurich.webp" },
-        ],
-        duvidasFrequentes: [
-            {
-                pergunta: "O seguro de vida serve apenas para casos de morte?",
-                resposta: "Não. O seguro de vida moderno oferece coberturas para serem usadas em vida, como indenização por invalidez (total ou parcial), diagnóstico de doenças graves (como câncer ou infarto) e até diárias de internação hospitalar."
-            },
-            {
-                pergunta: "Quem recebe a indenização precisa pagar imposto ou passar por inventário?",
-                resposta: "Não. De acordo com a legislação brasileira, o seguro de vida não é considerado herança. Por isso, o valor é pago diretamente aos beneficiários, livre de impostos e sem precisar passar pelo processo burocrático de inventário."
-            },
-            {
-                pergunta: "Posso escolher qualquer pessoa como beneficiário?",
-                resposta: "Sim. Você tem total liberdade para escolher quem receberá a indenização (familiares, amigos ou parceiros) e pode alterar essa indicação a qualquer momento na sua apólice."
-            },
-            {
-                pergunta: "Existe carência para começar a usar o seguro?",
-                resposta: "Para acidentes pessoais, a cobertura costuma ser imediata após a aceitação da proposta. Para morte natural ou doenças, algumas seguradoras podem aplicar carências que variam de 60 a 90 dias, dependendo do contrato."
-            },
-            {
-                pergunta: "O que acontece se eu quiser cancelar o seguro?",
-                resposta: "O cancelamento pode ser feito a qualquer momento sem multas. No entanto, nos seguros tradicionais, o valor pago não é devolvido. A exceção são os seguros de 'Vida Resgatável', que permitem retirar uma parte do montante após um período determinado."
-            }
-        ]
-    },
-    //auto - pessoa fisica
-    {
-        slug: "seguro-auto",
-        titulo: "Seguro Auto",
-        type: "fisica",
-        descricao: "Proteja seu veículo com as melhores coberturas do mercado. Oferecemos seguros personalizados com assistência 24h, carro reserva e condições especiais para você dirigir com tranquilidade",
-        imagemUrl: "/images/hero-images/seguro-auto.jpg",
-        coberturas: [
-            {
-                titulo: "Seguros para Carro, Moto e Caminhão",
-                descricao: "Proteção completa para seu veículo, seja ele um carro, moto ou caminhão, com coberturas personalizadas para atender suas necessidades."
-            },
-            {
-                titulo: "Colisão, Roubo e Furto",
-                descricao: "Proteção completa que cobre danos por batidas, incêndio, além de indenização em casos de roubo ou furto do veículo."
-            },
-            {
-                titulo: "Danos a Terceiros (RCF-V)",
-                descricao: "Cobre despesas com danos materiais e corporais causados a outras pessoas em acidentes de trânsito sob sua responsabilidade."
-            },
-            {
-                titulo: "Fenômenos da Natureza",
-                descricao: "Segurança contra imprevistos climáticos, como enchentes, alagamentos, queda de árvores e chuvas de granizo."
-            },
-            {
-                titulo: "Assistência 24h",
-                descricao: "Suporte total em qualquer emergência, incluindo guincho, chaveiro, auxílio mecânico e socorro para pane elétrica."
-            },
-            {
-                titulo: "Carro Reserva",
-                descricao: "Mobilidade garantida enquanto seu veículo estiver em reparo, para que você não fique na mão."
-            }
-        ],
-        seguradoras: [
-            { alt: "Akad", src: "/images/seguradoras/akad.PNG" },
-            { alt: "Aliro", src: "/images/seguradoras/aliro.png" },
-            { alt: "Allianz", src: "/images/seguradoras/allianz.svg" },
-            { alt: "Azul", src: "/images/seguradoras/azul.png" },
             { alt: "Bradesco", src: "/images/seguradoras/bradesco.svg" },
-            { alt: "HDI", src: "/images/seguradoras/hdi.webp" },
-            { alt: "Itaú", src: "/images/seguradoras/itau.jpg" },
-            { alt: "Porto Seguro", src: "/images/seguradoras/porto.svg" },
-            { alt: "Suhai", src: "/images/seguradoras/suhai.webp" },
-            { alt: "Sura", src: "/images/seguradoras/sura.png" },
-            { alt: "Tokio Marine", src: "/images/seguradoras/tokio.svg" },
-            { alt: "Yelum", src: "/images/seguradoras/yelum.webp" },
-            { alt: "Zurich", src: "/images/seguradoras/zurich.webp" }
+            { alt: "SulAmérica", src: "/images/seguradoras/sulamerica.webp" }
         ],
         duvidasFrequentes: [
             {
-                pergunta: "O que é a franquia e quando eu preciso pagá-la?",
-                resposta: "A franquia é a participação obrigatória do segurado em caso de danos parciais no veículo (consertos). Você paga o valor fixado na apólice diretamente à oficina, e a seguradora cobre o restante. Em casos de perda total, roubo/furto ou danos a terceiros, você não paga franquia."
+                pergunta: "O consórcio é uma forma de financiamento?",
+                resposta: "Não. No consórcio você paga parcelas para formar um grupo que se ajuda mutuamente; não há cobrança de juros, apenas taxa de administração."
             },
             {
-                pergunta: "O seguro cobre qualquer pessoa que estiver dirigindo meu carro?",
-                resposta: "Depende da sua apólice. Geralmente, condutores eventuais estão cobertos, mas pessoas que dirigem o veículo regularmente (ex: filhos ou cônjuges) devem ser listadas como condutores adicionais para garantir que a cobertura seja válida em caso de sinistro."
+                pergunta: "Como sei quando serei contemplado?",
+                resposta: "A contemplação pode ocorrer por sorteio ou por lance. Você escolhe se deseja ofertar um lance para antecipar a entrega da carta de crédito."
             },
             {
-                pergunta: "Qual a diferença entre cobertura de Terceiros e cobertura Completa?",
-                resposta: "A cobertura de Terceiros (RCF-V) indeniza apenas danos materiais ou corporais que você causar a outros veículos ou pessoas. Já a cobertura Completa (Compreensiva) protege o seu próprio veículo contra colisão, incêndio, roubo e furto, além de incluir a cobertura para terceiros."
-            },
-            {
-                pergunta: "Como funciona a Classe de Bônus na renovação?",
-                resposta: "A Classe de Bônus é um sistema de pontuação: a cada ano que você renova o seguro sem registrar nenhum sinistro, você ganha um nível (ponto). Quanto maior sua classe de bônus, maior o desconto que você recebe no valor do seguro, e esse bônus pertence ao CPF do segurado, não ao carro."
-            },
-            {
-                pergunta: "Tenho direito a carro reserva por quanto tempo?",
-                resposta: "O período de carro reserva varia conforme a cláusula contratada, sendo os prazos mais comuns de 7, 15 ou 30 dias. Ele pode ser acionado em situações de sinistro coberto, como colisões que exijam reparo ou em casos de roubo e furto enquanto o processo de indenização ocorre."
+                pergunta: "Posso usar o consórcio para comprar diferentes tipos de bens?",
+                resposta: "Sim. Existem cartas de crédito específicas para imóveis, veículos e serviços (como reforma), que podem ser utilizadas dentro das regras do plano."
             }
         ]
     },
-    //residencial - pessoa fisica
+    // previdência privada (pessoa física)
     {
-        slug: "seguro-residencial",
-        titulo: "Seguro Residencial",
+        slug: "previdencia",
+        titulo: "Previdência Privada",
         type: "fisica",
-        descricao: "Proteja seu patrimônio e sua família com coberturas completas que vão desde danos elétricos até serviços de assistência 24h. Mais do que um seguro, a tranquilidade que o seu lar merece.",
-        imagemUrl: "/images/hero-images/seguro-residencial.jpg",
+        descricao: "Garanta estabilidade financeira no futuro com um plano de previdência que se adapta ao seu ritmo de vida e ao seu momento profissional.",
+        imageUrl: "/images/hero-images/hero-bg.jpg",
         coberturas: [
             {
-                titulo: "Incêndio, Raio e Explosão",
-                descricao: "A cobertura básica que protege a estrutura do imóvel e tudo o que está dentro dele contra fogo, descargas elétricas atmosféricas e explosões de qualquer natureza."
+                titulo: "Acumulação Programada",
+                descricao: "Contribuições mensais que formam um capital para complementar a aposentadoria ou alcançar objetivos de longo prazo."
             },
             {
-                titulo: "Danos Elétricos",
-                descricao: "Garante a reposição de eletrodomésticos, eletrônicos e instalações que venham a queimar devido a curto-circuitos ou variações de tensão na rede elétrica."
+                titulo: "Benefício por Sobrevivência",
+                descricao: "Receba uma renda mensal ou saque o valor acumulado ao atingir a idade ou o prazo definidos no contrato."
             },
             {
-                titulo: "Roubo e Furto Qualificado",
-                descricao: "Protege seus bens (móveis, roupas, eletrônicos) em caso de assalto ou invasão do imóvel que deixe vestígios de arrombamento."
+                titulo: "Cobertura por Invalidez",
+                descricao: "Em casos de invalidez total ou parcial, o plano pode liberar o capital acumulado ou pagar uma renda adicional ao participante."
             },
             {
-                titulo: "Responsabilidade Civil Familiar",
-                descricao: "Cobre danos causados involuntariamente a terceiros, como um vazamento no seu apartamento que estraga o teto do vizinho ou um objeto que cai da sua janela."
-            },
-            {
-                titulo: "Vendaval e Granizo",
-                descricao: "Indenização por danos causados por ventos fortes ou chuvas de granizo que venham a danificar telhados, janelas e o conteúdo da residência."
-            },
-            {
-                titulo: "Quebra de Vidros",
-                descricao: "Cobre a substituição de vidros de janelas, portas, espelhos e até tampos de mesa que se quebrem acidentalmente."
-            },
-            {
-                titulo: "Perda ou Pagamento de Aluguel",
-                descricao: "Caso o imóvel fique inabitável após um sinistro, o seguro paga as despesas de aluguel em outro local ou compensa o valor que você deixaria de receber se o imóvel estivesse alugado."
+                titulo: "Vantagens Fiscais",
+                descricao: "Em planos PGBL e VGBL, há benefícios fiscais que ajudam a otimizar o seu investimento para o futuro."
             }
         ],
         seguradoras: [
-            { alt: "Allianz", src: "/images/seguradoras/allianz.svg" },
-            { alt: "Azul", src: "/images/seguradoras/azul.png" },
-            { alt: "HDI", src: "/images/seguradoras/hdi.webp" },
             { alt: "Itaú", src: "/images/seguradoras/itau.jpg" },
-            { alt: "Mapfre", src: "/images/seguradoras/mapfre.png" },
-            { alt: "Porto Seguro", src: "/images/seguradoras/porto.svg" },
-            { alt: "Pottencial", src: "/images/seguradoras/pottencial.png" },
-            { alt: "Sura", src: "/images/seguradoras/sura.png" },
-            { alt: "Tokio Marine", src: "/images/seguradoras/tokio.svg" },
-            { alt: "Unimed Seguros", src: "/images/seguradoras/unimed.png" },
-            { alt: "Yelum", src: "/images/seguradoras/yelum.webp" },
-            { alt: "Zurich", src: "/images/seguradoras/zurich.webp" }
+            { alt: "Bradesco", src: "/images/seguradoras/bradesco.svg" },
+            { alt: "SulAmérica", src: "/images/seguradoras/sulamerica.webp" }
         ],
         duvidasFrequentes: [
             {
-                pergunta: "O que está coberto na garantia básica do seguro residencial?",
-                resposta: "A cobertura básica obrigatória cobre danos causados por incêndio, queda de raio (dentro do terreno) e explosão de qualquer natureza. Outras proteções, como roubo ou danos elétricos, são contratadas como coberturas adicionais."
+                pergunta: "Qual a diferença entre PGBL e VGBL?",
+                resposta: "No PGBL você deduz as contribuições do imposto de renda, ideal para quem faz declaração completa; no VGBL o imposto é cobrado sobre o rendimento, planejado para quem faz declaração simplificada."
             },
             {
-                pergunta: "As assistências 24h (chaveiro, encanador, eletricista) têm custo extra?",
-                resposta: "Geralmente não. A maioria dos planos já inclui um pacote de assistência dia e noite. Você paga apenas pelas peças trocadas, se necessário, mas a mão de obra do profissional costuma ser gratuita dentro do limite da apólice."
+                pergunta: "Posso resgatar o valor antes da aposentadoria?",
+                resposta: "Sim, mas pode haver cobrança de taxas e tributação, dependendo do prazo e do regime de tributação escolhido."
             },
             {
-                pergunta: "Danos causados por curto-circuito em eletrodomésticos estão cobertos?",
-                resposta: "Sim, desde que você contrate a cobertura adicional de 'Danos Elétricos'. Ela protege contra oscilações de energia e curtos que queimem computadores, geladeiras e outros aparelhos."
-            },
-            {
-                pergunta: "O seguro cobre qualquer tipo de vazamento?",
-                resposta: "Depende. O seguro residencial cobre danos causados por vazamentos acidentais e súbitos (rompimento de tubulação). Problemas crônicos por falta de manutenção ou infiltrações lentas geralmente não têm cobertura."
-            },
-            {
-                pergunta: "Se eu moro em apartamento, ainda preciso de seguro residencial?",
-                resposta: "Sim. O seguro do condomínio cobre apenas as áreas comuns e a estrutura global do prédio. O seu seguro individual protege o conteúdo do seu imóvel (móveis, eletrônicos) e danos que você possa causar a vizinhos, como um vazamento no seu banheiro."
+                pergunta: "O plano de previdência é seguro?",
+                resposta: "Sim, é regulado pela SUSEP e conta com regras claras sobre garantias e liquidez, além de oferecer diferentes perfis de investimento conforme seu apetite de risco."
             }
         ]
-
+    },
+    // fiança locatícia (pessoa jurídica)
+    {
+        slug: "fianca-locaticia",
+        titulo: "Fiança Locatícia",
+        type: "juridica",
+        descricao: "Garantia de aluguel para empresas e locadores, substituindo o fiador e facilitando a locação de imóveis comerciais.",
+        imageUrl: "/images/hero-images/hero-bg.jpg",
+        coberturas: [
+            {
+                titulo: "Garantia de Aluguel",
+                descricao: "Pagamento do aluguel em caso de inadimplência do locatário, conforme valores e prazos definidos em contrato."
+            },
+            {
+                titulo: "Cobertura de Danos ao Imóvel",
+                descricao: "Reembolso por danos causados ao imóvel pelo locatário que extrapolem o desgaste natural."
+            },
+            {
+                titulo: "Despesas Jurídicas",
+                descricao: "Cobertura de custos relacionados a processos de despejo ou cobranças judiciais."
+            },
+            {
+                titulo: "Assistência na Locação",
+                descricao: "Suporte no processo de análise cadastral e emissão da garantia, para agilizar a formalização do contrato."
+            }
+        ],
+        seguradoras: [
+            { alt: "Porto Seguro", src: "/images/seguradoras/porto.svg" },
+            { alt: "Zurich", src: "/images/seguradoras/zurich.webp" },
+            { alt: "Allianz", src: "/images/seguradoras/allianz.svg" }
+        ],
+        duvidasFrequentes: [
+            {
+                pergunta: "Qual a diferença entre fiança locatícia e seguro fiança?",
+                resposta: "No Brasil, os termos são usados de forma similar: ambos substituem o fiador e garantem o pagamento do aluguel em caso de inadimplência."
+            },
+            {
+                pergunta: "Como funciona a análise do locatário?",
+                resposta: "A seguradora analisa o histórico financeiro e cadastral do locatário para aprovar ou não a garantia do contrato."
+            },
+            {
+                pergunta: "O valor pago é devolvido ao final do contrato?",
+                resposta: "Não. A taxa paga é o custo do serviço de garantia; só é reembolsado se houver saldo não utilizado em caso de sinistro."
+            }
+        ]
     }
+
 ]

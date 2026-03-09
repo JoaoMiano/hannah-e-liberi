@@ -3,7 +3,8 @@ import { CoverageSection } from "@/components/layout/ServicePage/CoverageSection
 import { HeroSectionService } from "@/components/layout/ServicePage/HeroSectionService";
 import { InsuranceCompanySection } from "@/components/layout/ServicePage/InsuranceCompanySection";
 import { QuestsSection } from "@/components/layout/ServicePage/QuestsSection";
-import { Servico, servicos } from "@/data/servicos";
+import { Servico } from "@/data/servicos";
+import { seguros } from "@/data/servicos/seguros";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -15,27 +16,29 @@ type Props = {
 const Page = async ({ params }: Props) => {
   const { slug } = await params;
 
-  const servico = servicos.find(
+  const seguro = seguros.find(
     (item: Servico) => item.slug === slug
   );
 
-  if (!servico) {
+  if (!seguro) {
     notFound();
   }
 
   return (
-      <div>
-        <HeroSectionService
-          title={servico.titulo}
-          description={servico.descricao}
-          imageUrl={servico.imagemUrl}
-        />
-        <CoverageSection service={servico} />
-        <InsuranceCompanySection service={servico}/>
-        <QuestsSection service={servico}/>
+    <div>
+      <HeroSectionService
+        title={seguro.titulo}
+        description={seguro.descricao}
+        imageUrl={seguro.imageUrl}
+      />
+      <CoverageSection service={seguro} />
+      <InsuranceCompanySection service={seguro} />
+      <QuestsSection quests={seguro.duvidasFrequentes} />
+      <div id="contato">
         <ContactSection />
-
       </div>
+
+    </div>
   );
 }
 

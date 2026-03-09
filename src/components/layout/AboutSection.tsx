@@ -32,8 +32,8 @@ const AboutSection = () => {
                     </div>
                     {/* text content */}
                     <div className="flex-1">
-                        <div className="inline-block bg-primary/10 w-60 text-primary px-4 py-2 rounded-full mb-4">
-                            Sobre a Hannah & Libere
+                        <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
+                            Sobre a Libere & Meneguetti
                         </div>
 
                         <h2 className="font-serif text-3xl md:text-4xl text-primary mb-6">
@@ -41,7 +41,7 @@ const AboutSection = () => {
                         </h2>
 
                         <p className="text-gray-600 mb-6 leading-relaxed">
-                            A Hannah & Libere nasceu com um propósito claro: oferecer segurança e tranquilidade
+                            A Libere & Meneguetti nasceu com um propósito claro: oferecer segurança e tranquilidade
                             através de seguros e soluções financeiras personalizadas. Com {getCompanyAge()} anos de trajetória
                             consolidada no mercado, nos tornamos referência em excelência e atendimento humanizado.
                         </p>
@@ -64,7 +64,7 @@ const AboutSection = () => {
                             />
                             <QualitiesItem
                                 title="Excêlencia"
-                                description="7 anos de experiência no mercado"
+                                description={`${getCompanyAge()} anos de experiência no mercado`}
                                 icon={<Award />}
                             />
                         </div>

@@ -74,7 +74,7 @@ export function Navbar() {
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
                                     <Link
-                                        href="/sobre"
+                                        href="#sobre"
                                         className="block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-sm"
                                     >
                                         Sobre Nós
@@ -84,7 +84,7 @@ export function Navbar() {
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
                                     <Link
-                                        href="/contato"
+                                        href="#contato"
                                         className="block select-none space-y-1 rounded-md py-2 px-8 leading-none no-underline outline-none transition-colors bg-primary-foreground text-white text-sm hover:text-white hover:bg-primary-foreground/90 focus:bg-primary/85"
                                     >
                                         Contato
@@ -165,7 +165,7 @@ export function Navbar() {
                             {/* Links Simples: Sobre e Contato */}
                             <div className="flex flex-col gap-4 ">
                                 <Link
-                                    href="/sobre"
+                                    href="#sobre"
                                     className="text-lg font-bold hover:text-primary transition-colors py-2"
                                 >
                                     Sobre Nós

@@ -1,9 +1,6 @@
-export type company = {
-  alt: string,
-  src:string
-}
+import { Company } from "@/types/services";
 
-export const seguradoras: company[] = [
+export const seguradoras: Company[] = [
   { alt: "Akad", src: "/images/seguradoras/akad.PNG" },
   { alt: "Aliro", src: "/images/seguradoras/aliro.png" },
   { alt: "Allianz", src: "/images/seguradoras/allianz.svg" },

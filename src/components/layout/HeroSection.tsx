@@ -25,12 +25,12 @@ const HeroSection = () => {
                         Segurança e Tranquilidade <br />para Você e Sua Família
                     </h1>
                     <p className="text-lg md:text-xl lg:text-2xl mb-8 text-zinc-300">
-                        Na Hannah & Libere, priorizamos o que é valioso para você. Com {getCompanyAge()} anos de atuação, nossa corretora oferece uma consultoria completa em seguros e soluções financeiras, entregando o cuidado exato que cada momento da sua vida exige.
+                        Na Libere & Meneguetti, priorizamos o que é valioso para você. Com {getCompanyAge()} anos de atuação, nossa corretora oferece uma consultoria completa em seguros e soluções financeiras, entregando o cuidado exato que cada momento da sua vida exige.
                     </p>
                     {/* Botões de Ação */}
                     <div className="flex flex-col lg:flex-row gap-4 pb-14 lg:pb-20 border-b-zinc-500 border-b-2">
                         <Link
-                            href="/contato"
+                            href="#contato"
                             className="w-52 lg:w-60 cursor-pointer"
                         >
                             <Button  className="w-full bg-transparent border border-secondary text-white text-lg cursor-pointer flex items-center justify-center gap-2 hover:gap-4">

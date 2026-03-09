@@ -37,7 +37,7 @@ const ServiceCard = ({ title, description, icon, type, url }: Props) => {
                         {description}
                     </p>
 
-                    <span className="inline-block font-medium text-sm text-primary transition-colors duration-300 group-hover:text-secondary mt-auto">
+                    <span className="inline-block font-medium text-sm text-primary transition-colors duration-300 group-hover:text-primary/70 mt-auto">
                         Saiba mais →
                     </span>
                 </CardContent>
