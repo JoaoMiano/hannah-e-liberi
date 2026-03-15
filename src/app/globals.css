@@ -150,3 +150,15 @@
     /* ajuste conforme sua paleta */
   }
 }
+
+/* Swipper */
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary-foreground) !important;
+}
+
+.swiper-pagination-bullet {
+  background: var(--color-primary-foreground) !important;
+}
+/* Mudar tamanho da seta interna */
