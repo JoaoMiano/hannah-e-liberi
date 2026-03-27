@@ -1,22 +1,24 @@
+import { cn } from "@/lib/utils";
+
 export type SocialAppType = {
     href: string;
     icon: React.ComponentType<{ size: number }>;
     label: string;
-    color?: string;
+    className?: string;
 };
 
-const SocialLink = (SocialApp: SocialAppType) => (
+const SocialLink = ({ href, icon: Icon, label, className }: SocialAppType) => (
     <a
-        href={SocialApp.href}
+        href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`
-            flex items-center justify-center w-14 h-14 rounded-md shadow-sm border border-gray-100 transition-all duration-300 text-white
-            ${SocialApp.color ? `bg-${SocialApp.color} ` : 'bg-primary hover:bg-secondary '}
-            `}
-        aria-label={SocialApp.label}
+        className={cn(
+            "flex items-center justify-center w-14 h-14 rounded-md shadow-sm border border-gray-100 transition-all duration-300 text-white bg-primary hover:bg-primary/70",
+            className,
+        )}
+        aria-label={label}
     >
-        <SocialApp.icon size={30} />
+        <Icon size={30} />
     </a>
 );
 

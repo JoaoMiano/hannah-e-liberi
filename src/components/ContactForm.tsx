@@ -1,6 +1,6 @@
 "use client"
 
-import { NewContactSchema, NewContactType } from "@/schemas/newContactSchema";
+import { NewContactSchema, NewContactType } from "@/schemas/contact-schema";
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";

@@ -1,5 +1,5 @@
 import { abhayaLibre } from "@/fonts/fonts"
-import { seguradoras } from "@/data/seguradoras"
+import { seguradoras } from "@/constants/seguradoras"
 import { CardCompanyLogo } from "../CardCompanyLogo"
 
 
@@ -15,7 +15,7 @@ const PaternsSection = () => {
                         Nossos Parceiros de Confiança
                     </h2>
                     <p className="text-zinc-600 text-md lg:text-xl max-w-3xl">
-                       Trabalhamos com as principais seguradoras do Brasil
+                        Trabalhamos com as principais seguradoras do Brasil
                     </p>
                 </div>
 

@@ -1,6 +1,5 @@
-import { testimonials } from "@/data/testimonials"
+import { testimonials } from "@/constants/testimonials"
 import { abhayaLibre } from "@/fonts/fonts"
-import test from "node:test"
 import TestimonialCard from "../TestimonialCard"
 
 const TestimonialSection = () => {
@@ -28,9 +27,9 @@ const TestimonialSection = () => {
                             name={testimonial.name}
                         />
                     ))}
-                </div>    
+                </div>
             </div>
-            
+
         </section>
     )
 

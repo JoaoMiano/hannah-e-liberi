@@ -1,6 +1,6 @@
 "use client"
 
-import { ImageConsorcio } from "@/types/imageConsorcio"
+import { ImageConsorcio } from "@/types/consorcio"
 import Image from "next/image"
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'

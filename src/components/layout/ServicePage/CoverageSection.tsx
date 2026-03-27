@@ -1,4 +1,4 @@
-import { Servico } from "@/data/servicos";
+import { Servico } from "@/constants/servicos";
 import { abhayaLibre } from "@/fonts/fonts";
 
 

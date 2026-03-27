@@ -1,9 +1,9 @@
-import { Testimonial } from "@/data/testimonials"
+import { Testimonial } from "@/constants/testimonials"
 import { Card, CardContent } from "./ui/card"
 import { Quote, Star } from "lucide-react"
 
 
-const TestimonialCard = ({age, content, name}:Testimonial) => {
+const TestimonialCard = ({ age, content, name }: Testimonial) => {
     return (
         <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/15 transition-all duration-300">
             <CardContent className="pt-6">

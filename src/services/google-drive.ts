@@ -33,12 +33,12 @@ export async function getConsorcioImages(): Promise<ConsorcioImagesResult> {
             }
         }
 
-        const data = await res.json()
+        const data: { files?: { id: string; name: string }[] } = await res.json()
         const files = Array.isArray(data?.files) ? data.files : []
 
         return {
             success: true,
-            data: files.map((file: any) => ({
+            data: files.map((file) => ({
                 id: file.id,
                 name: file.name,
                 url: `https://drive.google.com/thumbnail?id=${file.id}&sz=w1000`

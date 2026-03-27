@@ -1,5 +1,5 @@
 import { CardCompanyLogo } from "@/components/CardCompanyLogo";
-import { Servico } from "@/data/servicos";
+import { Servico } from "@/constants/servicos";
 import { abhayaLibre } from "@/fonts/fonts";
 
 export const InsuranceCompanySection = ({ service }: { service: Servico }) => {
@@ -19,7 +19,7 @@ export const InsuranceCompanySection = ({ service }: { service: Servico }) => {
                         <CardCompanyLogo
                             key={index}
                             company={company}
-        
+
                         />
                     ))}
 

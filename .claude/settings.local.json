@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /c/Users/joaom/Projetos/hannah-e-liberi/src/app/**/*.tsx /c/Users/joaom/Projetos/hannah-e-liberi/src/app/**/*.jsx /c/Users/joaom/Projetos/hannah-e-liberi/src/app/*.tsx)",
+      "Bash(git mv:*)",
+      "Bash(ls src/components/layout/Navbar*)",
+      "Bash(git rm:*)"
+    ]
+  }
+}

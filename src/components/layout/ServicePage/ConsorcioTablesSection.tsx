@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react"
 import { ConsorcioCarousel } from "@/components/Carousel/Carousel"
-import { ImageConsorcio } from "@/types/imageConsorcio"
+import { ImageConsorcio } from "@/types/consorcio"
 import { Button } from "@/components/ui/button" // Supondo que você use o Button do shadcn
 import { abhayaLibre } from "@/fonts/fonts"
 

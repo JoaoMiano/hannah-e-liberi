@@ -2,9 +2,9 @@ import { HeroSectionService } from "@/components/layout/ServicePage/HeroSectionS
 import ConsorcioExplanation from "@/components/layout/ServicePage/ConsorcioExplanation";
 import { abhayaLibre } from "@/fonts/fonts"
 import { CheckCircle, Minus } from "lucide-react";
-import ContactSection from "@/components/layout/CoontactSection";
+import ContactSection from "@/components/layout/ContactSection";
 import { QuestsSection } from "@/components/layout/ServicePage/QuestsSection";
-import { questsConsorcio } from "@/data/servicos/questsFinanceiro";
+import { questsConsorcio } from "@/constants/servicos/questsFinanceiro";
 import { ConsorcioTablesSection } from "@/components/layout/ServicePage/ConsorcioTablesSection";
 
 

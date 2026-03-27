@@ -1,5 +1,5 @@
 import { abhayaLibre } from "@/fonts/fonts";
-import { getCompanyAge } from "@/helpers/yearsMarket";
+import { getCompanyAge } from "@/helpers/years-market";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +12,7 @@ const Footer = () => {
                     <div className="flex flex-col gap-4 lg:gap-8 items-center justify-center">
                         <Link href="/">
                             <Image
-                                src="/images/logoPrimaria.jpg"
+                                src="/images/logoPrimaria.png"
                                 alt="Logo Hannah & Liberi"
                                 width={150}
                                 height={50}

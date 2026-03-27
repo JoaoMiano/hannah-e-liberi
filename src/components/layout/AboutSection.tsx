@@ -1,7 +1,7 @@
 import Image from "next/image"
 import QualitiesItem from "../QualitiesItem"
 import { Award, Shield, UsersRound } from "lucide-react"
-import { getCompanyAge } from "@/helpers/yearsMarket"
+import { getCompanyAge } from "@/helpers/years-market"
 
 const AboutSection = () => {
     return (
@@ -9,12 +9,14 @@ const AboutSection = () => {
             <section className="container mx-auto px-4 lg:px-6 py-12 md:py-18 lg:py-20 ">
                 <div className="flex gap-10 flex-col lg:flex-row">
                     {/* image */}
-                    <div className="relative">
-                        <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                            <img
-                                src="../../images/hero-images/about-section-image.jpg"
+                    <div className="relative flex-1">
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full h-125">
+                            <Image
+                                src="/images/hero-images/about-section-image.jpg"
                                 alt="Hannah & Libere - Parceria e Confiança"
-                                className="w-full h-125 object-cover"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover"
                             />
                             <div className="absolute inset-0 bg-linear-to-t from-primary/40 to-transparent"></div>
                         </div>
@@ -22,7 +24,7 @@ const AboutSection = () => {
                         {/* Floating Badge */}
                         <div className="absolute -bottom-6 left-70 text-white rounded-full shadow-xl">
                             <Image
-                                src="/images/sublogo.jpg"
+                                src="/images/sublogo-v2.jpg"
                                 alt="Sublogo Hannah & Libere"
                                 width={150}
                                 height={150}

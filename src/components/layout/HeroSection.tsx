@@ -1,8 +1,9 @@
 import { Button } from "../ui/button";
 import Link from "next/link"
+import Image from "next/image"
 import { ChevronRight } from "lucide-react";
 import { abhayaLibre } from "@/fonts/fonts";
-import { getCompanyAge } from "@/helpers/yearsMarket";
+import { getCompanyAge } from "@/helpers/years-market";
 
 
 const HeroSection = () => {
@@ -10,10 +11,12 @@ const HeroSection = () => {
         <section className="relative text-white overflow-hidden">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0">
-                <img
-                    src="../../images/hero-images/hero-bg.jpg"
+                <Image
+                    src="/images/hero-images/hero-bg.jpg"
                     alt="Segurança e Proteção"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    priority
                 />
                 <div className="absolute inset-0 bg-linear-to-r from-primary/80 to-primary/55"></div>
             </div>

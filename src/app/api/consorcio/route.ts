@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getConsorcioImages } from "@/services/googleDrive"
+import { getConsorcioImages } from "@/services/google-drive"
 
 // Função assíncrona que lida com requisições GET para a rota /api/consorcio
 export async function GET(request: NextRequest) {

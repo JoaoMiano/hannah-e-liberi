@@ -9,7 +9,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Hannah & Liberi - Corretora de Seguro",
+  title: "Liberi & Meneghetti - Corretora de Seguro",
   description: "Corretora de Seguros especializada em oferecer as melhores soluções em seguros para você e sua família. Proteja o que mais importa com nossos serviços personalizados e atendimento de qualidade.",
 };
 
