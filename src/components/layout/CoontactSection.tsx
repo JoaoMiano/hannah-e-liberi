@@ -2,7 +2,7 @@
 import { abhayaLibre } from "@/fonts/fonts"
 import ContactForm from "../ContactForm"
 import SocialLink from "../SocialLink"
-import { Facebook, InstagramIcon, Linkedin, Mail, MessageCircle, Phone } from "lucide-react"
+import { Facebook, InstagramIcon, Linkedin, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
 import QualitiesItem from "../QualitiesItem"
 
 export const ContactSection = () => {
@@ -23,8 +23,9 @@ export const ContactSection = () => {
                                 Sem filas ou burocracia. Tire suas dúvidas ou peça um orçamento em poucos minutos. Estamos prontos para te ouvir.
                             </p>
                             <div className="flex flex-col gap-4 mb-4">
-                                <QualitiesItem title="Telefone" description="(11) 4524-4877" icon={<Phone />} />
-                                <QualitiesItem title="E-mail" description="contato@hannaheliberi.com.br" icon={<Mail />} />
+                                <QualitiesItem title="Telefone" description="(11) 4524-4877 / (19) 99608-1254" icon={<Phone />} />
+                                <QualitiesItem title="E-mail" description="contato@lmcorretora.com" icon={<Mail />} />
+                                <QualitiesItem title="Endereço" description="Av Governador Laudo Natel - 152, sala 7, Centro - Serra Negra - SP" icon={<MapPin />} />
                             </div>
 
                             <h3 className={`${abhayaLibre.className} text-center text-primary text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-3xl`}>
