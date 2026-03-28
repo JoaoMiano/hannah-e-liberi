@@ -1,11 +1,11 @@
 import { HeroSectionService } from "@/components/layout/ServicePage/HeroSectionService";
-import ConsorcioExplanation from "@/components/layout/ServicePage/ConsorcioExplanation";
+import ConsorcioExplanation from "@/components/layout/ServicePage/Consorcio/ConsorcioExplanation";
 import { abhayaLibre } from "@/fonts/fonts"
 import { CheckCircle, Minus } from "lucide-react";
 import ContactSection from "@/components/layout/ContactSection";
 import { QuestsSection } from "@/components/layout/ServicePage/QuestsSection";
-import { questsConsorcio } from "@/constants/servicos/questsFinanceiro";
-import { ConsorcioTablesSection } from "@/components/layout/ServicePage/ConsorcioTablesSection";
+import { questsConsorcio } from "@/constants/servicos/questsConsorcio";
+import { ConsorcioTablesSection } from "@/components/layout/ServicePage/Consorcio/ConsorcioTablesSection";
 
 
 const Consorcio = () => {
@@ -14,7 +14,7 @@ const Consorcio = () => {
             <HeroSectionService
                 title={"Consórcio"}
                 description={"Realize seus objetivos com planejamento e sem juros. A forma mais inteligente de conquistar seus sonhos com parcelas que cabem no seu bolso."}
-                imageUrl={"/images/hero-images/consorcio.jpg"}
+                imageUrl={"/images/hero-images/financeiro/consorcio.jpg"}
             />
             <ConsorcioExplanation />
 

@@ -2,43 +2,46 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { abhayaLibre } from "@/fonts/fonts";
 import { Quest } from "@/types/services";
 import { MessageCircleQuestionMark } from "lucide-react";
+import { RevealSection } from "@/components/RevealSection";
 
 export const QuestsSection = ({ quests }: { quests: Quest[] }) => {
     return (
         <section className="container mx-auto px-4 lg:px-6 py-12 md:py-24">
             <div className="max-w-6xl mx-auto flex flex-col gap-10">
-                
-                {/* Header*/}
-                <div className={`flex flex-col md:flex-row gap-3 justify-center items-center ${abhayaLibre.className}`}>
+
+                {/* Header */}
+                <RevealSection className={`flex flex-col md:flex-row gap-3 justify-center items-center ${abhayaLibre.className}`}>
                     <MessageCircleQuestionMark size={48} className="text-secondary shrink-0" />
                     <h2 className="text-4xl md:text-5xl text-primary text-center">
                         Perguntas Frequentes
                     </h2>
-                </div>
+                </RevealSection>
 
-                {/* Accordion*/}
-                <Accordion 
-                    type="single" 
-                    collapsible 
-                    defaultValue="item-0" 
-                    className="w-full space-y-2"
-                >
-                    {quests.map((quest, index) => (
-                        <AccordionItem 
-                            key={index} 
-                            value={`item-${index}`}
-                            className="border border-gray-200 rounded-xl px-4 bg-white transition-all hover:border-secondary/40 shadow-sm"
-                        >
-                            <AccordionTrigger className="text-left text-lg font-medium text-primary hover:no-underline hover:text-secondary py-6">
-                                {quest.pergunta}
-                            </AccordionTrigger>
-                            
-                            <AccordionContent className="text-gray-600 text-base leading-relaxed pb-6">
-                                {quest.resposta}
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
+                {/* Accordion */}
+                <RevealSection delay={100}>
+                    <Accordion
+                        type="single"
+                        collapsible
+                        defaultValue="item-0"
+                        className="w-full space-y-2"
+                    >
+                        {quests.map((quest, index) => (
+                            <AccordionItem
+                                key={index}
+                                value={`item-${index}`}
+                                className="border border-gray-200 rounded-xl px-4 bg-white transition-all hover:border-secondary/40 hover:shadow-sm shadow-xs"
+                            >
+                                <AccordionTrigger className="text-left text-lg font-medium text-primary hover:no-underline hover:text-secondary py-6 transition-colors duration-200">
+                                    {quest.pergunta}
+                                </AccordionTrigger>
+
+                                <AccordionContent className="text-gray-600 text-base leading-relaxed pb-6">
+                                    {quest.resposta}
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </RevealSection>
 
             </div>
         </section>

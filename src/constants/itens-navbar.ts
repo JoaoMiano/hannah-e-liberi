@@ -20,8 +20,8 @@ export const pessoaFisicaPlanos: NavItem[] = [
 
 export const pessoaFisicaSolucoes: NavItem[] = [
   { name: "Consórcio", href: "/consorcio" },
-  { name: "Previdência Privada", href: "/pessoa-fisica/previdencia" },
-  { name: "Fiança Locatícia (Aluguel)", href: "/pessoa-fisica/seguro-aluguel" },
+  { name: "Previdência Privada", href: "/previdencia-privada" },
+  { name: "Fiança Locatícia", href: "/fianca-locaticia" },
 ];
 
 //Pessoa jurídica
@@ -42,6 +42,5 @@ export const pessoaJuridicaPlanos: NavItem[] = [
 
 export const pessoaJuridicaSolucoes: NavItem[] = [
   { name: "Consórcio", href: "/consorcio" },
-  { name: "Previdência Corporativa", href: "/pessoa-juridica/previdencia" },
-  { name: "Garantia Aluguel", href: "/pessoa-juridica/fianca-locaticia" },
+  { name: "Fiança Locatícia", href: "/fianca-locaticia" },
 ];

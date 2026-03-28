@@ -1,5 +1,5 @@
 import { Cobertura, Company, Quest } from "@/types/services";
-import { questsConsorcio } from "./servicos/questsFinanceiro";
+import { questsConsorcio } from "./servicos/questsConsorcio";
 
 
 

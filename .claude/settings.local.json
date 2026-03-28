@@ -4,7 +4,8 @@
       "Bash(wc -l /c/Users/joaom/Projetos/hannah-e-liberi/src/app/**/*.tsx /c/Users/joaom/Projetos/hannah-e-liberi/src/app/**/*.jsx /c/Users/joaom/Projetos/hannah-e-liberi/src/app/*.tsx)",
       "Bash(git mv:*)",
       "Bash(ls src/components/layout/Navbar*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(python3 \"c:/Users/joaom/Projetos/hannah-e-liberi/.agents/skills/ui-ux-pro-max/scripts/search.py\" \"financial services insurance broker professional trust modern\" --design-system -p \"Hannah e Liberi\" -f markdown)"
     ]
   }
 }
