@@ -4,7 +4,9 @@ export const NewContactSchema = z.object({
   name: z.string().min(1, "Nome é obrigatório"),
   surname: z.string().min(1, "Sobrenome é obrigatório"),
   email: z.string().email("Email inválido"),
-  phone: z.string().min(8, "Telefone inválido"),
+  phone: z.string().check(
+    z.refine((val) => val.replace(/\D/g, "").length === 11, "Telefone inválido")
+  ),
   message: z.string().optional(),
 
   acceptedTerms: z

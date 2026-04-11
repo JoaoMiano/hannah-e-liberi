@@ -1,34 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hannah & Liberi — Site Institucional
 
-## Getting Started
+Site institucional para corretora de seguros, desenvolvido com foco em **performance**, **SEO** e **experiência do usuário**. O projeto apresenta os serviços da empresa (seguros, planos, consórcio, previdência privada e fiança locatícia), com formulário de contato funcional e integração com e-mail via SMTP.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tecnologias
+
+| Camada | Tecnologia |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Linguagem | TypeScript |
+| Estilização | Tailwind CSS v4 |
+| Componentes | shadcn/ui + Radix UI |
+| Formulários | React Hook Form + Zod |
+| E-mail | Nodemailer (SMTP) |
+| Animações | CSS keyframes + IntersectionObserver |
+| Carrossel | Embla Carousel / Swiper |
+| Ícones | Lucide React |
+| Máscara | react-imask |
+
+---
+
+## Funcionalidades
+
+- **Páginas institucionais** — Home, Sobre, Consórcio, Previdência Privada, Fiança Locatícia
+- **Páginas dinâmicas** — Seguros e Planos com rotas `[slug]` e `generateStaticParams`
+- **Formulário de contato** — Validação client + server-side com Zod, envio de e-mail via API Route, feedback de sucesso/erro
+- **Scroll reveal** — Componente `RevealSection` com `IntersectionObserver` para animações ao rolar a página
+- **Sticky Stacking Cards** — Efeito de cards empilhados com `position: sticky` na seção de Fiança Locatícia
+- **Navbar responsiva** — Transparente no topo, sólida ao rolar, com menu mobile via Sheet
+- **Botão WhatsApp fixo** — Canto inferior direito com animação de pulse
+- **SEO** — Metadata export em todas as páginas, Server Components por padrão
+
+---
+
+## Estrutura do Projeto
+
+```
+src/
+├── app/
+│   ├── api/contact/route.ts       # API Route de envio de e-mail
+│   ├── consorcio/
+│   ├── previdencia-privada/
+│   ├── fianca-locaticia/
+│   ├── seguros/[slug]/            # Rota dinâmica
+│   └── planos/[slug]/             # Rota dinâmica
+├── components/
+│   ├── layout/                    # Navbar, Footer, Hero, seções da home
+│   │   └── ServicePage/           # Componentes das páginas de serviço
+│   ├── ui/                        # Componentes shadcn/ui
+│   └── RevealSection.tsx          # Scroll reveal com IntersectionObserver
+├── lib/
+│   └── mail/
+│       ├── transporter.ts         # Config SMTP (Nodemailer)
+│       └── sendMail.ts            # Serviço de envio com template HTML
+├── schemas/
+│   └── contact-schema.ts          # Schema Zod compartilhado (client + server)
+└── constants/                     # Dados estáticos (serviços, FAQs, etc.)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Como rodar localmente
 
-## Learn More
+**1. Clone o repositório**
+```bash
+git clone https://github.com/seu-usuario/hannah-e-liberi.git
+cd hannah-e-liberi
+```
 
-To learn more about Next.js, take a look at the following resources:
+**2. Instale as dependências**
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**3. Configure as variáveis de ambiente**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Crie um arquivo `.env.local` na raiz:
+```env
+# SMTP para envio de e-mail
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=seu@email.com
+SMTP_PASS=sua_senha_de_app
 
-## Deploy on Vercel
+# Destinatário dos contatos recebidos
+CONTACT_EMAIL_TO=destino@email.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Link do WhatsApp (botão flutuante)
+NEXT_PUBLIC_WHATSAPP_URL=https://wa.me/5511999999999
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**4. Inicie o servidor de desenvolvimento**
+```bash
+npm run dev
+```
+
+Acesse [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Deploy
+
+O projeto está pronto para deploy na **Vercel**. Basta importar o repositório e configurar as variáveis de ambiente no painel da plataforma.
+
+```bash
+npm run build   # verifica erros de build
+npm run start   # inicia em modo produção
+```
