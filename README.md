@@ -65,13 +65,5 @@ src/
 
 [corretoralm.com.br](https://corretoralm.com.br)
 
----
 
-## Deploy
-
-O projeto está pronto para deploy na **Vercel**. Basta importar o repositório e configurar as variáveis de ambiente no painel da plataforma.
-
-```bash
-npm run build   # verifica erros de build
-npm run start   # inicia em modo produção
 ```
