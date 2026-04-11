@@ -61,42 +61,9 @@ src/
 
 ---
 
-## Como rodar localmente
+## Acesse o projeto
 
-**1. Clone o repositório**
-```bash
-git clone https://github.com/seu-usuario/hannah-e-liberi.git
-cd hannah-e-liberi
-```
-
-**2. Instale as dependências**
-```bash
-npm install
-```
-
-**3. Configure as variáveis de ambiente**
-
-Crie um arquivo `.env.local` na raiz:
-```env
-# SMTP para envio de e-mail
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=seu@email.com
-SMTP_PASS=sua_senha_de_app
-
-# Destinatário dos contatos recebidos
-CONTACT_EMAIL_TO=destino@email.com
-
-# Link do WhatsApp (botão flutuante)
-NEXT_PUBLIC_WHATSAPP_URL=https://wa.me/5511999999999
-```
-
-**4. Inicie o servidor de desenvolvimento**
-```bash
-npm run dev
-```
-
-Acesse [http://localhost:3000](http://localhost:3000).
+[corretoralm.com.br](https://corretoralm.com.br)
 
 ---
 
