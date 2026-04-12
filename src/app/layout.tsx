@@ -10,8 +10,31 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Liberi & Meneghetti - Corretora de Seguro",
+  title: "Liberi & Meneghetti - Corretora de Seguros",
   description: "Corretora de Seguros especializada em oferecer as melhores soluções em seguros para você e sua família. Proteja o que mais importa com nossos serviços personalizados e atendimento de qualidade.",
+  metadataBase: new URL("https://corretoralm.com.br"),
+  openGraph: {
+    title: "Liberi & Meneghetti - Corretora de Seguros",
+    description: "Corretora de Seguros especializada em oferecer as melhores soluções em seguros para você e sua família. Proteja o que mais importa com nossos serviços personalizados e atendimento de qualidade.",
+    url: "https://corretoralm.com.br",
+    siteName: "Liberi & Meneghetti",
+    images: [
+      {
+        url: "/images/logoPrimaria.png",
+        width: 1200,
+        height: 630,
+        alt: "Liberi & Meneghetti - Corretora de Seguros",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Liberi & Meneghetti - Corretora de Seguros",
+    description: "Corretora de Seguros especializada em oferecer as melhores soluções em seguros para você e sua família.",
+    images: ["/images/logoPrimaria.png"],
+  },
 };
 
 export default function RootLayout({

@@ -1,19 +1,19 @@
 "use client"
 
 import { useState } from "react";
-import { NewContactSchema, NewContactType } from "@/schemas/contact-schema";
+import { NewContactSchema, NewContactType, SERVICOS_OPTIONS } from "@/schemas/contact-schema";
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
 import { Input } from "./ui/input";
-import { IMaskInput } from "react-imask";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { Checkbox } from "./ui/checkbox";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import { IMaskInput } from "react-imask";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
-
 
 const ContactForm = () => {
     const [status, setStatus] = useState<FormStatus>("idle");
@@ -26,6 +26,7 @@ const ContactForm = () => {
             surname: "",
             email: "",
             phone: "",
+            servico: undefined,
             message: "",
             acceptedTerms: false,
         }
@@ -66,22 +67,6 @@ const ContactForm = () => {
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="w-full max-w-3xl flex flex-col gap-3 md:gap-6 p-6 border rounded-lg shadow-lg shadow-zinc-500"
             >
-                {/* Feedback de sucesso */}
-                {status === "success" && (
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800">
-                        <CheckCircle className="h-5 w-5 mt-0.5 shrink-0" />
-                        <p className="text-sm font-medium">{serverMessage}</p>
-                    </div>
-                )}
-
-                {/* Feedback de erro */}
-                {status === "error" && (
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-red-50 border border-red-200 text-red-800">
-                        <AlertCircle className="h-5 w-5 mt-0.5 shrink-0" />
-                        <p className="text-sm font-medium">{serverMessage}</p>
-                    </div>
-                )}
-
                 {/* Name and Surname */}
                 <div className="flex flex-col md:flex-row gap-2 md:gap-4">
                     <FormField
@@ -127,30 +112,55 @@ const ContactForm = () => {
                     )}
                 />
 
-                {/* Phone */}
-                <FormField
-                    name="phone"
-                    control={form.control}
-                    render={({ field }) => (
-                        <FormItem className="flex-1">
-                            <FormLabel>Telefone *</FormLabel>
-                            <FormControl>
-                                <IMaskInput
-                                    mask="(00) 00000-0000"
-                                    disabled={isLoading}
-                                    value={field.value}
-                                    onAccept={(value: string) => field.onChange(value)}
-                                    onBlur={field.onBlur}
-                                    name={field.name}
-                                    inputRef={field.ref}
-                                    placeholder="(11) 99999-9999"
-                                    className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
-                                />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
+                {/* Phone + Servico */}
+                <div className="flex flex-col md:flex-row gap-2 md:gap-4">
+                    <FormField
+                        name="phone"
+                        control={form.control}
+                        render={({ field }) => (
+                            <FormItem className="flex-1">
+                                <FormLabel>Telefone *</FormLabel>
+                                <FormControl>
+                                    <IMaskInput
+                                        mask="(00) 00000-0000"
+                                        disabled={isLoading}
+                                        value={field.value}
+                                        onAccept={(value: string) => field.onChange(value)}
+                                        onBlur={field.onBlur}
+                                        name={field.name}
+                                        inputRef={field.ref}
+                                        placeholder="(11) 99999-9999"
+                                        className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+
+                    <FormField
+                        name="servico"
+                        control={form.control}
+                        render={({ field }) => (
+                            <FormItem className="flex-1">
+                                <FormLabel>Serviço de interesse *</FormLabel>
+                                <Select disabled={isLoading} onValueChange={field.onChange} value={field.value}>
+                                    <FormControl>
+                                        <SelectTrigger className="w-full">
+                                            <SelectValue placeholder="Selecione um serviço" />
+                                        </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                        {SERVICOS_OPTIONS.map((s) => (
+                                            <SelectItem key={s} value={s}>{s}</SelectItem>
+                                        ))}
+                                    </SelectContent>
+                                </Select>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                </div>
 
                 {/* Message */}
                 <FormField
@@ -211,6 +221,22 @@ const ContactForm = () => {
                         </>
                     )}
                 </Button>
+
+                {/* Feedback de sucesso */}
+                {status === "success" && (
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800">
+                        <CheckCircle className="h-5 w-5 mt-0.5 shrink-0" />
+                        <p className="text-sm font-medium">{serverMessage}</p>
+                    </div>
+                )}
+
+                {/* Feedback de erro */}
+                {status === "error" && (
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-red-50 border border-red-200 text-red-800">
+                        <AlertCircle className="h-5 w-5 mt-0.5 shrink-0" />
+                        <p className="text-sm font-medium">{serverMessage}</p>
+                    </div>
+                )}
             </form>
         </Form>
     )
